@@ -1,0 +1,593 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chapitre 1 : Second degré</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css"> <!-- Reveal -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/moon.css"> <!-- Reveal -->
+  <link href="https://fonts.googleapis.com/css2?family=Computer+Modern+Serif&display=swap" rel="stylesheet" /><!-- Police computer modern (latex) -->
+  
+  <style>
+    body, .reveal {
+      font-family: 'Computer Modern Serif', serif;
+      background-color: black;
+      color: white;
+    }
+    .reveal h2 {color: red; font-weight: bold; text-transform: none; font-size: 1.6em; margin-bottom: 0.6em;} /* titre rouge */
+    .reveal h3 { color: ForestGreen; font-weight: bold; text-transform: none; text-align: left; font-size: 1.3em; margin-bottom: 0.5em; } /* titre vert */
+  </style>
+
+  <!-- Divisions -->
+  <style>
+    .definition, .definitions, .defprop, .prop, .theoreme, .exemple, .exemples, .remarque, .mnemo {
+    padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; text-align: left; max-width: 95%; min-height: 4em;
+    }
+    .definition {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+    .definitions {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+    .defprop {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+    .prop {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+    .theoreme {border: 2px solid red; background-color: rgba(255, 0, 0, 0.1);}
+    .exemple {border: 2px solid blue; background-color: rgba(0, 21, 255, 0.161);}
+    .exemples {border: 2px solid blue; background-color: rgba(0, 21, 255, 0.161);}
+    .remarque {border: 2px solid orange; background-color: rgba(255, 165, 0, 0.1);}
+    .mnemo {border: 2px solid #711082;; background-color: rgba(210, 14, 204, 0.195);}
+
+    
+    .definition::before, .definitions::before, .defprop::before, .prop::before, .theoreme::before, .exemple::before, .exemples::before, .remarque::before, .mnemo::before {
+      display: block; text-align: left; font-weight: bold; margin-bottom: 0.5em;
+    }
+
+    .definition::before { content: "Définition"; color: red; }
+    .definitions::before { content: "Définitions"; color: red; }
+    .defprop::before { content: "Définition / Propriété"; color: red; }
+    .prop::before  { content: "Propriété";  color: red; }
+    .theoreme::before  { content: "Théorème";  color: red; }
+    .exemple::before   { content: "Exemple";   color: blue; }
+    .exemples::before   { content: "Exemples";   color: blue; }
+    .remarque::before  { content: "Remarque";  color: orange; }
+    .mnemo::before  { content: "Mnémotechnie"; color: #711082; }
+  </style>
+
+  <!-- Configuration MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]']],
+        processEscapes: true, packages: ['base', 'ams']
+      },
+      loader: {load: ['[tex]/ams']}, svg: {fontCache: 'global'}
+    };
+  </script>
+</head>
+
+
+<body>
+  <div class="reveal">
+      <div class="slides">
+
+        <!-- Première slide -->
+        <section data-background-image="media/im00.jpeg"
+        data-background-size="contain"
+        data-background-position="center"
+        data-background-repeat="no-repeat">
+          <div class="fragment fade-up" style=" width: 100%; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; margin-right: 0%; padding-top: 1vh; color: rgb(255, 255, 255); text-align: center;  ">
+              <p style="font-size: 1.1em; text-shadow: 6px 5px 10px rgba(231, 113, 34, 0.727);">
+                Chapitre 1 : Fonctions polynômes du second degré
+              </p>
+              
+              <p style="font-size: 0.55em; display: inline-block; margin-top: 25em; z-index: 10;">
+                  Lycée Marcelin <span style="font-variant: small-caps;">Berthelot</span> - 
+                  Aymé <span style="font-variant: small-caps;">Petit</span>
+              </p>
+          </div>
+        </section>
+
+        <!---->
+        <!-- I/ DÉFINITION ET FORME CANONIQUE -->
+        <!---->
+
+        <section data-transition="fade">
+            <h2>I/ Définition et forme canonique</h2>
+            
+            <div class="definitions fragment fade-in" data-fragment-index="0">
+                <p class="fragment fade-in" data-fragment-index="1">
+                    Une fonction <b>polynôme du second degré</b> est une fonction \(f\) définie sur \(\mathbb{R}\) dont une expression est
+                </p>
+
+                <div class="fragment fade-down" data-fragment-index="2" style="display: flex; align-items: flex-start; gap: 1em;">
+                    <div style="position: relative; display: inline-block; text-align: center;">
+                        <div style="border: 2.5px solid yellow; padding: 0.2em; margin-right: 0.2em;">
+                        \( f(x) = ax^2 + bx + c \)
+                        </div>
+                        <div class="fragment fade-in" data-fragment-index="3" style="position: absolute; left: 50%; transform: translateX(-50%); font-size: 0.75em; margin-top: 0.3em; color: yellow; white-space: nowrap;">
+                            <b>forme développée</b> 
+                        </div>
+                    </div>
+                    <div style="align-self: center;">
+                        où \( a, b, c \in \mathbb{R} \) et \( a \ne 0 \).
+                    </div>
+                </div>
+
+                <br>
+                <p class="fragment slide-in" data-fragment-index="4">
+                    La courbe représentative de \(f\) est une <b>parabole</b>.
+                </p>
+            </div>
+        </section>
+
+        <section>
+          <div class="exemples fragment fade-up" style="min-height: 500px;">
+            <div id="video-paraboles-container" class="fragment"></div>
+            <p class="fragment" style="color: yellow; text-align: center; font-size: 0.75em;">
+              <span style="display:inline-block; width:1em;"></span>
+              <span>\(a=1,5 \gt 0\)</span>
+              <span style="display:inline-block; width:8em;"></span>
+              <span>\(a=-2 \lt 0\)</span>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div class="fragment" style="text-align: center; font-style: italic; color: #d4ff00;">Ellipse</div>
+          <div style="text-align: center;">
+            <video id="ellipse-video" width="90%" playsinline preload="auto" style="display: block; margin: auto;" loop>
+              <source src="media/cone_ellipse.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+
+        <section>
+          <div class="fragment" style="text-align: center; font-style: italic; color: #d4ff00;">Parabole</div>
+          <div id="video-cone-container" style="text-align: center;">
+                <video id="cone-video" width="90%" playsinline preload="auto" style="display:block;margin:auto;" loop>
+                  <source src="media/cone_parabole.mp4" type="video/mp4">
+                </video>
+              </div>
+        </section>
+
+        <section>
+          <div class="fragment" style="text-align: center; font-style: italic; color: #d4ff00;">Hyperbole</div>
+          <div style="text-align: center;">
+            <video id="hyperbole-video" width="90%" playsinline preload="auto" style="display: block; margin: auto;" loop>
+              <source src="media/cone_hyperbole.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
+        
+
+        <section data-auto-animate>
+          <p data-id="intro">
+            Dans la suite du cours, \(f(x)=ax^2+bx+c\) <br>
+            <span class="fragment">avec \(a,b,c\in\mathbb{R}\) et \(a\neq 0\). </span> 
+          </p>
+        </section>
+
+        <section data-auto-animate>
+          <p data-id="intro">
+            Dans la suite du cours, \(f(x)=ax^2+bx+c\) <br>
+            <span>avec \(a,b,c\in\mathbb{R}\) et \(a\neq 0\). </span> 
+          </p>
+
+          <div class="defprop fragment" id="forme canonique">
+            <p>
+              <span class="fragment">Pour tout \(x\in\mathbb{R}\) :</span> 
+              <span class="fragment fade-up">
+                \( \quad f(x)=a(x- \)
+                <span style="color: yellow;">\( \alpha \)</span>
+                \( )^2 + \)
+                <span style="color: yellow;">\( \beta \)</span>
+              </span>
+            </p>
+
+            <div class="fragment fade-up" style="margin-top: 0.5em;">
+              avec &nbsp;
+              <span style="position: relative; border: 3px solid yellow; padding:10px;">
+                <span style="color: yellow;">\( \alpha \)</span>
+                \(=\frac{-b}{2a} \)
+              </span>
+              <div style="position: absolute; top: 2.8em; left: 5.5em; font-size: 0.7em; color: yellow;">
+                <b>alpha</b> <span style="display:inline-block; width:6.7em;"></span> <b>beta</b>
+              </div>
+
+              &nbsp; et &nbsp;
+              <span style="border: 3px solid yellow; padding:10px;">
+                <span style="color: yellow;">\( \beta \)</span>
+                \(=f(\alpha) \)
+              </span>
+              \( = -\bigg(\frac{b^2 - 4ac}{4a}\bigg) \).
+            </div>
+
+            <div style="height: 1em;"></div>
+            <div class="fragment">
+              C'est la <b>forme canonique</b> de $f$.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="prop fragment" data-fragment-index="1">
+            Le <b>sommet</b> de la parabole a pour coordonnées \( (\alpha;\beta) \).
+          </div>
+          <div id="sommet-parabole-container" class="fragment" data-fragment-index="0" style="text-align: center;"></div>
+        </section>
+
+
+        <!---->
+        <!-- II/ VARIATIONS -->
+        <!---->
+
+        <section data-auto-animate>
+          <h2>II/ Variations</h2>
+
+          <div data-id="propriete" class="prop fragment" data-fragment-index="0" style="position: relative;">
+            <div style="display: flex; align-items: stretch; gap: 0.35em;">
+              <div data-id="cas_positif" class="fragment" data-fragment-index="1" style="flex: 1; font-size: 0.8em;">
+                Si <span style="color: red;">\(a\gt 0\) </span> alors \(f\) est strictement : <br>
+                <ul style="margin-left: 0.25em;">
+                  <li>décroissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
+                  <li>croissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). </li>
+                </ul>
+              </div>
+
+              <div data-id="sep" class="fragment" data-fragment-index="2" style="width: 1px; background-color: #ffffff;"></div>
+
+              <div data-id="cas_negatif" class="fragment" data-fragment-index="2" style="flex: 1; font-size: 0.8em;">
+                Si <span style="color: red;">\(a\lt 0\) </span> alors \(f\) est strictement : <br>
+                <ul style="margin-left: 0.25em;">
+                  <li>croissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
+                  <li>décroissante sur \(  \big[\alpha\ ;\ +\infty\big[ \).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; text-align: left; max-width: 95%; min-height: 4em;">
+            <div class="fragment" data-fragment-index="1" style="display: flex; align-items: stretch; gap: 0.35em;">
+              <div data-id="image1" style="flex: 1; font-size: 0.8em;">
+                <img src="media/im01.png" style="display: block; margin: auto;">
+              </div>
+
+              <div data-id="sep_image" class="fragment" data-fragment-index="2" style="width: 1px; background-color: #ffffff;"></div>
+
+              <div data-id="image2" class="fragment" data-fragment-index="2" style="flex: 1; font-size: 0.8em;">
+                <img src="media/im02.png" style="display: block; margin: auto;">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="propriete" class="prop" style="position: relative;">
+            <div style="display: flex; align-items: stretch; gap: 0.35em;">
+              <div data-id="cas_positif" style="flex: 1; font-size: 0.8em;">
+                Si <span style="color: red;">\(a\gt 0\) </span> alors \(f\) est strictement : <br>
+                <ul style="margin-left: 0.25em;">
+                  <li>décroissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
+                  <li>croissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). </li>
+                </ul>
+              </div>
+
+              <div data-id="sep" style="width: 1px; background-color: #ffffff;"></div>
+
+              <div data-id="cas_negatif" style="flex: 1; font-size: 0.8em;">
+                Si <span style="color: red;">\(a\lt 0\) </span> alors \(f\) est strictement : <br>
+                <ul style="margin-left: 0.25em;">
+                  <li>croissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
+                  <li>décroissante sur \(  \big[\alpha\ ;\ +\infty\big[ \).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; max-width: 95%; min-height: 4em;">
+            
+            <div class="fragment mnemo" data-fragment-index="0">
+              <div style="display: flex; align-items: stretch; gap: 0.35em;">
+                <div style="flex: 1; font-size: 0.8em; display: flex; align-items: center; gap: 0.5em;">
+                  <img src="media/im02_1.PNG" style="width: 25%;">
+                  <p>\(a\gt0\) parabole tournée vers le haut</p>
+                </div>
+
+                <div class="fragment" data-fragment-index="0" style="width: 1px; background-color: #ffffff;"></div>
+
+                <div style="flex: 1; font-size: 0.8em; display: flex; align-items: center; gap: 0.5em;">
+                  <img src="media/im02_2.png" style="width: 25%;">
+                  <p>\(a\lt0\) parabole tournée vers le bas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; text-align: left; max-width: 95%; min-height: 4em;">
+            <div style="display: flex; align-items: stretch; gap: 0.35em;">
+              <div data-id="image1" style="flex: 1; font-size: 0.8em;">
+                <img src="media/im01.png" style="display: block; margin: auto;">
+              </div>
+
+              <div data-id="sep_image" style="width: 1px; background-color: #ffffff;"></div>
+
+              <div data-id="image2" style="flex: 1; font-size: 0.8em;">
+                <img src="media/im02.png" style="display: block; margin: auto;">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="propro" class="prop">
+            <p class="fragment">La parabole représentative de \(f\) a pour axe de symétrie la droite d'équation \(x=\alpha\).</p>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="propro" class="prop">
+            La parabole représentative de \(f\) a pour axe de symétrie la droite d'équation \(x=\alpha\).
+          </div>
+          
+          <div class="fragment" style="display: flex; justify-content: center;">
+            <img src="media/im03.jpg" style="display: block; width: 65%;">
+          </div>
+        </section>
+
+        <!---->
+        <!-- III/ ÉQUATIONS DU SECOND DEGRÉ -->
+        <!---->
+
+        <section data-auto-animate>
+          <h2>III/ Équations du second degré</h2>
+          
+          <div class="fragment">
+            <p><ins>Objectif :</ins></p>
+            <p>Trouver les points d'intersection entre la parabole et l'axe des <b>abscisses</b>.</p>
+            <img src="media/im04.jpeg" style="display: block; margin: auto; width: 75%;">
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h2>III/ Équations du second degré</h2>
+          
+          <div>
+            <p><ins>Objectif :</ins></p>
+            <p>Résoudre l'équation \(f(x)=0\). </p>
+            <img src="media/im04.jpeg" style="display: block; margin: auto; width: 75%;">
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h2>III/ Équations du second degré</h2>
+          <h3>1) Résolution</h3>
+          <div class="definition fragment">
+            Une <b>équation du second degré</b> est une équation de la forme
+            <div style="height: -20em;"></div>
+            <span style="margin-top: -20%;">\[ ax^2+bx+c=0 \quad  (*) \]</span>
+            (avec \(a\neq0\) et \(b,c\in\mathbb{R}\)).
+          </div>
+        </section>
+
+        <section>
+          <div class="definition">
+            <p class="fragment">
+              \( \Delta=b^2-4ac \) est appelé le <b>discriminant</b> du trinôme \( ax^2+bx+c \).
+            </p>
+          </div>
+          <div class="theoreme fragment" style="font-size: 0.9em;">
+            <div class="fragment">
+              <span style="font-weight: bold;">&#10022;</span>
+              <span> Si <span>$\Delta \lt 0$</span>, l’équation \( (*) \) n’a <span style="border-bottom: 2.5px solid yellow; padding-bottom: 0px;"> pas de solution</span> réelle.</span>
+            </div>
+            <div class="fragment" style="margin-top: 0.5em;">
+              <span style="font-weight: bold;">&#10022;</span>
+              <span> Si <span>$\Delta = 0$</span>, l’équation \( (*) \) a une unique solution : <span style="border-bottom: 2.5px solid yellow; padding-bottom: 0px;"> \( x_0 = \alpha \)</span>.</span>
+            </div>
+            <div class="fragment" style="margin-top: 0.5em;">
+              <span style="font-weight: bold;">&#10022;</span>
+              <span> Si <span>$\Delta \gt 0$</span>, l’équation \( (*) \) a deux solutions réelles distinctes :</span>
+              <div style="margin-top: 0.8em; font-size: 90%; text-align: center;">
+                <span style="border : 2.5px solid yellow; padding: 32px;">
+                  \( x_1 = \dfrac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \dfrac{-b + \sqrt{\Delta}}{2a} \)
+                </span>
+              </div>
+            </div>
+            <div style="height: 0.6em;"></div>
+          </div>
+        </section>
+
+        <section data-auto-animate="">
+          <div data-id="texte" style="text-align: center; font-style: italic; font-size: 0.9em;">Image à coller dans votre cahier.</div>
+        </section>
+        <section data-auto-animate="">
+          <div data-id="texte" style="text-align: center; font-style: italic; font-size: 0.75em;">Image à coller dans votre cahier.</div>
+          <img src="media/im05.jpg">
+        </section>
+
+        <section>
+          <h3>2) Racines et factorisation</h3>
+          <div class="definition fragment">
+            Une solution de $(*)$ s'appelle une <b>racine</b> (de $f$).
+          </div>
+          <div class="prop fragment" style="font-size: 1em;">
+            <div class="fragment">
+              · Lorsque <span>$\Delta \lt 0$</span>, $f$ ne se factorise pas dans \( \mathbb{R} \).
+            </div>
+            <div class="fragment" style="margin-top: 0.3em;">
+              · Lorsque <span>$\Delta = 0$</span>, $f$ se factorise en \( a(x - x_0)^2 \).
+            </div>
+            <div class="fragment" style="margin-top: 0.3em;">
+              · Lorsque <span>$\Delta \gt 0$</span>, $f$ se factorise en \( a(x - x_1)(x - x_2) \).
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="profin" class="prop">
+            <div class="fragment">
+              Soit \( x_1 \) et \( x_2 \) deux réels, et on pose
+              <span style="background-color: rgba(255, 255, 0, 0.343); padding: 5px; border-radius: 10px;">\( S = x_1 + x_2 \)</span> et
+              <span style="background-color: rgba(255, 255, 0, 0.343); padding: 5px; border-radius: 10px;">\( P = x_1 \times x_2 \)</span>.
+            </div>
+
+            <div class="fragment" style="margin-top: 0.5em;">
+              <span style="color: yellow;">&#10022;</span> Si \( x_1 \) et \( x_2 \) sont solutions de \( x^2 + bx + c = 0 \), alors \( b = -S \) et \( c = P \).
+            </div>
+
+            <div class="fragment" style="margin-top: 0.5em;">
+              <span style="color: yellow;">&#10022;</span>  Les solutions de l’équation du second degré \( x^2 - Sx + P = 0 \) sont \( x_1 \) et \( x_2 \).
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div data-id="profin" class="prop">
+            <div>
+              Soit \( x_1 \) et \( x_2 \) deux réels, et on pose
+              <span style="background-color: rgba(255, 255, 0, 0.343); padding: 5px; border-radius: 10px;">\( S = x_1 + x_2 \)</span> et
+              <span style="background-color: rgba(255, 255, 0, 0.343); padding: 5px; border-radius: 10px;">\( P = x_1 \times x_2 \)</span>.
+            </div>
+
+            <div class style="margin-top: 0.5em;">
+              <span style="color: yellow;">&#10022;</span> Si \( x_1 \) et \( x_2 \) sont solutions de \( x^2 + bx + c = 0 \), alors \( b = -S \) et \( c = P \).
+            </div>
+
+            <div class style="margin-top: 0.5em;">
+              <span style="color: yellow;">&#10022;</span>  Les solutions de l’équation du second degré \( x^2 - Sx + P = 0 \) sont \( x_1 \) et \( x_2 \).
+            </div>
+          </div>
+
+          <div style="text-align: center; font-size: 1.2em; margin-top: 1em;">
+            <span style="font-size: 1.5em;">&#x2767;</span>
+            <span style="margin: 0 0.5em;">Fin de Chapitre</span>
+            <span style="font-size: 1.5em; display: inline-block; transform: scaleX(-1);">&#x2767;</span>
+          </div>
+        </section>
+
+        <!-- ----- Fin de la présentation ----- -->
+      </div>
+  </div>
+
+  <!---->
+  <!-- Scripts du body -->
+  <!---->
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+  <!-- Config Reveal -->
+  <script>
+    Reveal.initialize({ transition: 'fade', hash: true });
+    const retypeset = (elements = null) => {
+      if (window.MathJax) {
+        MathJax.typesetClear();
+        MathJax.typesetPromise(elements || undefined)
+          .catch(err => console.error("MathJax error:", err.message));
+      }
+    };
+    Reveal.on('ready', () => retypeset());
+    Reveal.on('slidechanged', () => {
+      if (window.MathJax && MathJax.typesetClear && MathJax.typesetPromise) {
+        MathJax.typesetClear(); MathJax.typesetPromise();
+      }
+    });
+    Reveal.on('fragmentshown', event => {
+      const elements = [event.fragment, ...event.fragment.querySelectorAll('*')]; retypeset(elements);
+    });
+  </script>
+
+  <!-- Vidéo cone ellipse -->
+  <script>
+    Reveal.on('ready', event => {
+      const video = document.getElementById('ellipse-video');
+      if (event.currentSlide.contains(video)) {
+        video.play().catch(err => console.warn("Lecture bloquée :", err));
+      }
+    });
+    Reveal.on('slidechanged', event => {
+      const video = document.getElementById('ellipse-video');
+      if (event.currentSlide.contains(video)) {
+        video.play().catch(err => console.warn("Lecture bloquée :", err));
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  </script>
+
+  <!-- Vidéo cone parabole -->
+  <script>
+    Reveal.on('ready', event => {
+      const video = document.getElementById('cone-video');
+      if (event.currentSlide.contains(video)) {
+        video.play().catch(err => console.warn("Lecture bloquée :", err));
+      }
+    });
+    Reveal.on('slidechanged', event => {
+      const video = document.getElementById('cone-video');
+      if (event.currentSlide.contains(video)) {
+        video.play().catch(err => console.warn("Lecture bloquée :", err));
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  </script>
+
+  <!-- Vidéo cone hyperbole -->
+  <script>
+    Reveal.on('ready', event => {
+      const video = document.getElementById('hyperbole-video');
+      if (event.currentSlide.contains(video)) {
+        video.play().catch(err => console.warn("Lecture bloquée :", err));
+      }
+    });
+    Reveal.on('slidechanged', event => {
+      const video = document.getElementById('hyperbole-video');
+      if (event.currentSlide.contains(video)) {
+        video.play().catch(err => console.warn("Lecture bloquée :", err));
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  </script>
+
+
+  <!-- Vidéo deux paraboles exemple -->
+  <script>
+    Reveal.on("fragmentshown", e => {
+      const c = document.getElementById("video-paraboles-container");
+      if (e.fragment === c && !c.firstChild) {
+        c.innerHTML = `<video width="90%" playsinline muted preload="auto" style="display:block;margin:auto;">
+          <source src="media/Paraboles.mp4" type="video/mp4">
+        </video>`;
+        Reveal.layout();
+        const v = c.firstChild;
+        v.play().catch(err => console.warn("Lecture bloquée :", err));
+        v.onended = () => {
+          v.style.pointerEvents = "none";
+          v.style.filter = "brightness(99.9%)";
+        };
+      }
+    });
+  </script>
+
+  <!-- Vidéo sommet parabole -->
+  <script>
+    Reveal.on("fragmentshown", e => {
+      const c = document.getElementById("sommet-parabole-container");
+      if (e.fragment === c && !c.firstChild) {
+        c.innerHTML = `<video width="90%" playsinline muted preload="auto" style="display:block;margin:auto;">
+          <source src="media/sommet_parabole.mp4" type="video/mp4">
+        </video>`;
+        Reveal.layout();
+        const v = c.firstChild;
+        v.play().catch(err => console.warn("Lecture bloquée :", err));
+        v.onended = () => {
+          v.style.pointerEvents = "none";
+          v.style.filter = "brightness(99.9%)";
+        };
+      }
+    });
+  </script>
+
+</body>
+</html>
