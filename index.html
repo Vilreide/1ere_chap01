@@ -47,7 +47,7 @@
     .exemple::before   { content: "Exemple";   color: blue; }
     .exemples::before   { content: "Exemples";   color: blue; }
     .remarque::before  { content: "Remarque";  color: orange; }
-    .mnemo::before  { content: "Mnémotechnie"; color: #711082; }
+    .mnemo::before  { content: "Mnémotechnie"; color: #9136a1; }
   </style>
 
   <!-- Configuration MathJax -->
@@ -68,16 +68,16 @@
       <div class="slides">
 
         <!-- Première slide -->
-        <section data-background-image="media/im00.jpeg"
+        <section data-background-image="media/IMG_00.jpeg"
         data-background-size="contain"
         data-background-position="center"
         data-background-repeat="no-repeat">
-          <div class="fragment fade-up" style=" width: 100%; margin-top: 0%; margin-bottom: 0%; margin-left: 0%; margin-right: 0%; padding-top: 1vh; color: rgb(255, 255, 255); text-align: center;  ">
-              <p style="font-size: 1.1em; text-shadow: 6px 5px 10px rgba(231, 113, 34, 0.727);">
+          <div class="fragment fade-up" style=" width: 80%; margin: auto; margin-top: -2em; color: rgb(255, 255, 255); text-align: center;  ">
+              <p style="font-size: 1.1em;"> <!-- text-shadow: 6px 5px 10px rgba(255, 255, 255, 0.727); -->
                 Chapitre 1 : Fonctions polynômes du second degré
               </p>
               
-              <p style="font-size: 0.55em; display: inline-block; margin-top: 25em; z-index: 10;">
+              <p style="font-size: 0.55em; display: inline-block; margin-top: 20em;">
                   Lycée Marcelin <span style="font-variant: small-caps;">Berthelot</span> - 
                   Aymé <span style="font-variant: small-caps;">Petit</span>
               </p>
@@ -217,99 +217,90 @@
         <!---->
         <!-- II/ VARIATIONS -->
         <!---->
+        
+        <section data-auto-animate>
+          <h2>II/ Variations</h2>
+        </section>
 
         <section data-auto-animate>
           <h2>II/ Variations</h2>
 
-          <div data-id="propriete" class="prop fragment" data-fragment-index="0" style="position: relative;">
-            <div style="display: flex; align-items: stretch; gap: 0.35em;">
-              <div data-id="cas_positif" class="fragment" data-fragment-index="1" style="flex: 1; font-size: 0.8em;">
-                Si <span style="color: red;">\(a\gt 0\) </span> alors \(f\) est strictement : <br>
-                <ul style="margin-left: 0.25em;">
-                  <li>décroissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
-                  <li>croissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). </li>
-                </ul>
-              </div>
-
-              <div data-id="sep" class="fragment" data-fragment-index="2" style="width: 1px; background-color: #ffffff;"></div>
-
-              <div data-id="cas_negatif" class="fragment" data-fragment-index="2" style="flex: 1; font-size: 0.8em;">
-                Si <span style="color: red;">\(a\lt 0\) </span> alors \(f\) est strictement : <br>
-                <ul style="margin-left: 0.25em;">
-                  <li>croissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
-                  <li>décroissante sur \(  \big[\alpha\ ;\ +\infty\big[ \).</li>
-                </ul>
-              </div>
+          <div data-id="laprop" class="prop fragment" data-fragment-index="0">
+            <div class="fragment" data-fragment-index="1" style="font-size: 0.92em;">
+              Si <span style="color: red;">\(a\gt 0\) </span> alors \(f\) est strictement : <br>
+                décroissante sur \( \big]-\infty\ ;\ \alpha\big] \) &nbsp; & &nbsp;
+                croissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). 
             </div>
           </div>
+          
+          <div style="display: flex; justify-content: space-between;">
+            <div style="width: 100%; padding:0.25em" class="fragment" data-fragment-index="1">
+              <img src="media/im01.png" style="display: block; margin: auto;">
+            </div>
+            <div style="width: 0%;">
+            </div>
+          </div>
+        </section>
 
-          <div style="padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; text-align: left; max-width: 95%; min-height: 4em;">
-            <div class="fragment" data-fragment-index="1" style="display: flex; align-items: stretch; gap: 0.35em;">
-              <div data-id="image1" style="flex: 1; font-size: 0.8em;">
-                <img src="media/im01.png" style="display: block; margin: auto;">
-              </div>
+        <section data-auto-animate>
+          <h2>II/ Variations</h2>
 
-              <div data-id="sep_image" class="fragment" data-fragment-index="2" style="width: 1px; background-color: #ffffff;"></div>
-
-              <div data-id="image2" class="fragment" data-fragment-index="2" style="flex: 1; font-size: 0.8em;">
-                <img src="media/im02.png" style="display: block; margin: auto;">
+          <div data-id="laprop" class="prop">
+            <div style="font-size: 0.92em;">
+              Si <span style="color: red;">\(a\gt 0\) </span> alors \(f\) est strictement : <br>
+                décroissante sur \( \big]-\infty\ ;\ \alpha\big] \) &nbsp; & &nbsp;
+                croissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). 
+            </div>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between;">
+            <div style="width: 47.8%; padding:0.25em">
+              <img src="media/im01.png" style="display: block; margin: auto;">
+            </div>
+            <div style="width: 45%;" class="mnemo">
+              <div style="flex: 1; font-size: 0.8em; display: flex; align-items: center; gap: 0.5em;">
+                <img src="media/im02_1.PNG" style="width: 22%;">
+                <p>\(a\gt0\) parabole tournée vers le haut</p>
               </div>
             </div>
           </div>
         </section>
 
         <section data-auto-animate>
-          <div data-id="propriete" class="prop" style="position: relative;">
-            <div style="display: flex; align-items: stretch; gap: 0.35em;">
-              <div data-id="cas_positif" style="flex: 1; font-size: 0.8em;">
-                Si <span style="color: red;">\(a\gt 0\) </span> alors \(f\) est strictement : <br>
-                <ul style="margin-left: 0.25em;">
-                  <li>décroissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
-                  <li>croissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). </li>
-                </ul>
-              </div>
-
-              <div data-id="sep" style="width: 1px; background-color: #ffffff;"></div>
-
-              <div data-id="cas_negatif" style="flex: 1; font-size: 0.8em;">
-                Si <span style="color: red;">\(a\lt 0\) </span> alors \(f\) est strictement : <br>
-                <ul style="margin-left: 0.25em;">
-                  <li>croissante sur \( \big]-\infty\ ;\ \alpha\big] \) </li>
-                  <li>décroissante sur \(  \big[\alpha\ ;\ +\infty\big[ \).</li>
-                </ul>
-              </div>
+          <div class="prop" data-id="theprop" data-fragment-index="0">
+            <div class="fragment" data-fragment-index="1" style="font-size: 0.92em;">
+              Si <span style="color: red;">\(a\lt 0\) </span> alors \(f\) est strictement : <br>
+                croissante sur \( \big]-\infty\ ;\ \alpha\big] \) &nbsp; & &nbsp;
+                décroissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). 
             </div>
           </div>
-
-          <div style="padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; max-width: 95%; min-height: 4em;">
-            
-            <div class="fragment mnemo" data-fragment-index="0">
-              <div style="display: flex; align-items: stretch; gap: 0.35em;">
-                <div style="flex: 1; font-size: 0.8em; display: flex; align-items: center; gap: 0.5em;">
-                  <img src="media/im02_1.PNG" style="width: 25%;">
-                  <p>\(a\gt0\) parabole tournée vers le haut</p>
-                </div>
-
-                <div class="fragment" data-fragment-index="0" style="width: 1px; background-color: #ffffff;"></div>
-
-                <div style="flex: 1; font-size: 0.8em; display: flex; align-items: center; gap: 0.5em;">
-                  <img src="media/im02_2.png" style="width: 25%;">
-                  <p>\(a\lt0\) parabole tournée vers le bas.</p>
-                </div>
-              </div>
+          
+          <div style="display: flex; justify-content: space-between;">
+            <div style="width: 100%; padding:0.25em" class="fragment" data-fragment-index="1">
+              <img src="media/im02.png" style="display: block; margin: auto;">
+            </div>
+            <div style="width: 0%;">
             </div>
           </div>
+        </section>
 
-          <div style="padding: 0.35em; border-radius: 6px; margin: 0.3em auto; position: relative; text-align: left; max-width: 95%; min-height: 4em;">
-            <div style="display: flex; align-items: stretch; gap: 0.35em;">
-              <div data-id="image1" style="flex: 1; font-size: 0.8em;">
-                <img src="media/im01.png" style="display: block; margin: auto;">
-              </div>
-
-              <div data-id="sep_image" style="width: 1px; background-color: #ffffff;"></div>
-
-              <div data-id="image2" style="flex: 1; font-size: 0.8em;">
-                <img src="media/im02.png" style="display: block; margin: auto;">
+        <section data-auto-animate>
+          <div class="prop" data-id="theprop">
+            <div style="font-size: 0.92em;">
+              Si <span style="color: red;">\(a\lt 0\) </span> alors \(f\) est strictement : <br>
+                croissante sur \( \big]-\infty\ ;\ \alpha\big] \) &nbsp; & &nbsp;
+                décroissante sur \(  \big[\alpha\ ;\ +\infty\big[ \). 
+            </div>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between;">
+            <div style="width: 47.8%; padding:0.25em">
+              <img src="media/im02.png" style="display: block; margin: auto;">
+            </div>
+            <div style="width: 45%;" class="mnemo">
+              <div style="flex: 1; font-size: 0.8em; display: flex; align-items: center; gap: 0.5em;">
+                <img src="media/im02_2.png" style="width: 22%;">
+                <p>\(a\lt0\) parabole tournée vers le bas</p>
               </div>
             </div>
           </div>
@@ -412,10 +403,12 @@
               · Lorsque <span>$\Delta \lt 0$</span>, $f$ ne se factorise pas dans \( \mathbb{R} \).
             </div>
             <div class="fragment" style="margin-top: 0.3em;">
-              · Lorsque <span>$\Delta = 0$</span>, $f$ se factorise en \( a(x - x_0)^2 \).
+              · Lorsque <span>$\Delta = 0$</span>, $f$ se factorise en
+              <span style="background-color: rgba(255, 255, 0, 0.343); padding: 5px; border-radius: 10px;">$ a(x - x_0)^2 $</span>.
             </div>
             <div class="fragment" style="margin-top: 0.3em;">
-              · Lorsque <span>$\Delta \gt 0$</span>, $f$ se factorise en \( a(x - x_1)(x - x_2) \).
+              · Lorsque <span>$\Delta \gt 0$</span>, $f$ se factorise en
+              <span style="background-color: rgba(255, 255, 0, 0.343); padding: 5px; border-radius: 10px;">$ a(x - x_1)(x - x_2) $</span>.
             </div>
           </div>
         </section>
